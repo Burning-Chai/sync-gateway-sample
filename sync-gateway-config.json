@@ -1,0 +1,29 @@
+{
+  "log": ["REST", "REST+", "HTTP", "HTTP+", "Access", "Cache", "Shadow", "Shadow+", "CRUD", "CRUD+", "Changes", "Changes+", "JSON", "JSON+"],
+  "verbose": true,
+  "databases": {
+    "geek": {
+      "server": "http://localhost:8091",
+      "users": {
+        "GUEST": {
+          "disabled": false, "all_channels": ["*"], "admin_channels": ["*"]
+        }
+      },
+      "bucket": "sync_gateway",
+      "sync": `function(doc) {channel(doc.channels);}`
+    },
+    "seminar": {
+      "server": "http://localhost:8091",
+      "users": {
+        "GUEST": {
+          "disabled": false, "all_channels": ["*"], "admin_channels": ["*"]
+        }
+      },
+      "bucket": "sync_gateway",
+      "sync": `function(doc) {channel(doc.channels);}`
+    }
+  },
+  "facebook": {
+    "register": true
+  }
+}
